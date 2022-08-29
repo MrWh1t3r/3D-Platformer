@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody rig;
+    public float jumpForce;
+    
+    private bool _isGrounded;
 
     private void Update()
     {
@@ -20,6 +23,20 @@ public class Player : MonoBehaviour
         if (vel.x != 0 || vel.z != 0)
         {
             transform.forward = vel;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded == true)
+        {
+            _isGrounded = false;
+            rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.contacts[0].normal == Vector3.up)
+        {
+            _isGrounded = true;
         }
     }
 }
