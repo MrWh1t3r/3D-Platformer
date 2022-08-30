@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -30,6 +32,11 @@ public class Player : MonoBehaviour
             _isGrounded = false;
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+
+        if (transform.position.y < -10)
+        {
+            GameOver();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -39,4 +46,10 @@ public class Player : MonoBehaviour
             _isGrounded = true;
         }
     }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
 }
