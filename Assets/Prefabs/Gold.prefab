@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2176171913014416696}
   - component: {fileID: 7729568307437826718}
+  - component: {fileID: 7376407980955202137}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Untagged
@@ -47,6 +48,20 @@ CapsuleCollider:
   m_Height: 0.2
   m_Direction: 1
   m_Center: {x: 0, y: -0.05, z: 0}
+--- !u!114 &7376407980955202137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5814666542793739366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4aa4d62f22f41438eb8ef434253399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 180
+  amount: 5
 --- !u!1001 &174184170564943499
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public Rigidbody rig;
     public float jumpForce;
+    public int score;
     
     private bool _isGrounded;
 
@@ -51,5 +52,9 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    
+
+    public void AddScore(int amount)
+    {
+        score += amount;
+    }
 }
