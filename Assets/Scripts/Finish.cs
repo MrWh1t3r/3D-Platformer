@@ -15,7 +15,7 @@ public class Finish : MonoBehaviour
         {
             if (lastLevel == true)
             {
-                //win text
+                SceneManager.LoadScene(0);
             }
             else
             {
